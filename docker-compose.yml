@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  burgersDB:
+    image: postgres:15.3
+    container_name: burgers-db
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=burger
+      - POSTGRES_PASSWORD=burger
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
